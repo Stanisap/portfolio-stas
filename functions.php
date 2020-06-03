@@ -143,10 +143,42 @@ add_action( 'widgets_init', 'portfolio_stas_widgets_init' );
  * Enqueue scripts and styles.
  */
 function portfolio_stas_scripts() {
-	wp_enqueue_style( 'portfolio-stas-style', get_stylesheet_uri(), array(), _S_VERSION );
+	//wp_enqueue_style( 'portfolio-stas-style', get_template_directory_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'portfolio-stas-style', 'rtl', 'replace' );
+    wp_enqueue_style( 'portfolio-stas-normalize', get_template_directory_uri() . '/assets/css/normalize.css', 0, null );
+    wp_enqueue_style( 'portfolio-stas-main', get_template_directory_uri() . '/assets/css/main.css' , 0, null );
+    wp_enqueue_style( 'portfolio-stas-bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' , 0, null );
+    wp_enqueue_style( 'portfolio-stas-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' , 0, null );
+    wp_enqueue_style( 'portfolio-stas-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css' , 0, null );
+    wp_enqueue_style( 'portfolio-stas-carousel', get_template_directory_uri() . '/assets/css/responsive.css' , 0, null );
+    wp_enqueue_style( 'portfolio-stas-style', get_template_directory_uri() . '/assets/css/style.css' , 0, null );
 
-	wp_enqueue_script( 'portfolio-stas-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+    wp_enqueue_script( 'jquery');
+    wp_enqueue_script( 'portfolio-stas-isotope', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-jquery-ui', get_template_directory_uri() . '/assets/js/jquery-ui.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-appear', get_template_directory_uri() . '/assets/js/appear.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-counterup', get_template_directory_uri() . '/assets/js/jquery.counterup.min.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-waypoints', get_template_directory_uri() . '/assets/js/waypoints.min.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-showHide', get_template_directory_uri() . '/assets/js/showHide.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-nicescroll', get_template_directory_uri() . '/assets/js/jquery.nicescroll.min.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-easing', get_template_directory_uri() . '/assets/js/jquery.easing.min.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-scrolling-nav', get_template_directory_uri() . '/assets/js/scrolling-nav.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-plugins', get_template_directory_uri() . '/assets/js/plugins.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-maps.googlepis', 'https://maps.googleapis.com/maps/api/js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-main', get_template_directory_uri() . '/assets/js/main.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-showHide', get_template_directory_uri() . '/assets/showHide.js', array(), null, true );
+    wp_enqueue_script( 'portfolio-stas-showHide', get_template_directory_uri() . '/assets/showHide.js', array(), null, true );
+
+
+    //<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    //<script src="js/vendor/jquery-1.11.2.min.js"></script>
+
+
+
+
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
